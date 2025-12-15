@@ -16,28 +16,22 @@ body {
   color: #ffd6e8;
 }
 
-/* 🎨 ARKA PLAN */
+/* ARKA PLAN */
 @keyframes bgShift {
   0% { background-position: 0% 50%; }
   100% { background-position: 100% 50%; }
 }
 
-/* 🎄 HEADER */
+/* HEADER */
 header {
   text-align: center;
   padding: 60px 20px;
-  animation: fadeIn 2s ease forwards;
+  animation: fadeIn 2s ease;
 }
 
 @keyframes fadeIn {
-  from {
-    opacity: 0;
-    transform: translateY(25px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
+  from { opacity: 0; transform: translateY(30px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .tree {
@@ -46,8 +40,8 @@ header {
 }
 
 @keyframes treeGlow {
-  from { transform: scale(1); filter: drop-shadow(0 0 10px #ff4da6); }
-  to { transform: scale(1.15); filter: drop-shadow(0 0 25px #ff9ad5); }
+  from { transform: scale(1); }
+  to { transform: scale(1.1); }
 }
 
 h1 {
@@ -60,7 +54,7 @@ p {
   opacity: 0.9;
 }
 
-/* 🐱 KEDİLER */
+/* KEDİLER */
 .cats {
   display: flex;
   justify-content: center;
@@ -72,69 +66,66 @@ p {
 .cat {
   background: rgba(255,255,255,0.12);
   padding: 20px;
-  border-radius: 22px;
+  border-radius: 20px;
   width: 220px;
   text-align: center;
-  backdrop-filter: blur(8px);
+  backdrop-filter: blur(6px);
   animation: float 4s ease-in-out infinite;
-  transition: transform .4s, box-shadow .4s;
-}
-
-.cat:hover {
-  transform: scale(1.08);
-  box-shadow: 0 0 25px rgba(255,77,166,0.7);
 }
 
 .cat span {
-  font-size: 42px;
+  font-size: 40px;
 }
 
 @keyframes float {
   0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-12px); }
+  50% { transform: translateY(-10px); }
 }
 
-/* 💖 BUTON */
+/* BUTON */
 .center {
   text-align: center;
   margin: 40px;
 }
 
 button {
-  padding: 15px 34px;
+  padding: 15px 30px;
   border-radius: 30px;
   border: none;
   font-size: 18px;
   cursor: pointer;
-  background: linear-gradient(45deg, #ff4da6, #ff9ad5);
+  background: linear-gradient(45deg, #ff4da6, #ff99cc);
   color: black;
   animation: pulse 2s infinite;
-  box-shadow: 0 0 20px rgba(255,77,166,0.6);
 }
 
 @keyframes pulse {
   0% { transform: scale(1); }
-  50% { transform: scale(1.12); }
+  50% { transform: scale(1.1); }
   100% { transform: scale(1); }
 }
 
-/* 📜 ŞİİR */
+/* ŞİİR */
 #poem {
   display: none;
-  max-width: 720px;
+  max-width: 700px;
   margin: 40px auto;
   padding: 30px;
-  background: rgba(0,0,0,0.55);
-  border-radius: 22px;
+  background: rgba(0,0,0,0.5);
+  border-radius: 20px;
   animation: glowIn 1.5s ease forwards;
 }
 
+#poem.show {
+  display: block;
+}
+
 @keyframes glowIn {
-  from { opacity: 0; transform: scale(0.92); }
+  from { opacity: 0; transform: scale(0.9); }
   to { opacity: 1; transform: scale(1); }
 }
 
-/* ❤️ KALP */
+/* KALPLER */
 .heart {
   position: fixed;
   bottom: -20px;
@@ -160,12 +151,12 @@ button {
 
 @keyframes rise {
   to {
-    transform: translateY(-120vh) rotate(45deg);
+    transform: translateY(-110vh) rotate(45deg);
     opacity: 0;
   }
 }
 
-/* ❄️ KAR */
+/* KAR */
 .snowflake {
   position: fixed;
   top: -10px;
@@ -173,10 +164,10 @@ button {
 }
 
 @keyframes fall {
-  to { transform: translateY(120vh); }
+  to { transform: translateY(110vh); }
 }
 
-/* ⬇️ FOOTER */
+/* FOOTER */
 footer {
   text-align: center;
   padding: 30px;
