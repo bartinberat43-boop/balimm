@@ -1,46 +1,49 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-  <link rel="stylesheet" href="style.css">
   <meta charset="UTF-8" />
   <title>🐾 BİRİCİK AŞKIM EVŞAN 🐾</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- CSS BAĞLANTISI -->
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<script>
-  // ❤️ Kalpler
-  for (let i = 0; i < 30; i++) {
-    const heart = document.createElement('div');
-    heart.className = 'heart';
-    heart.style.left = Math.random() * 100 + 'vw';
-    heart.style.animationDuration = 8 + Math.random() * 8 + 's';
-    document.body.appendChild(heart);
-  }
-</script>
-
-<script>
-  // ❄️ Kar
-  for (let i = 0; i < 70; i++) {
-    const flake = document.createElement('div');
-    flake.className = 'snowflake';
-    flake.innerHTML = '❄';
-    flake.style.left = Math.random() * 100 + 'vw';
-    flake.style.fontSize = 10 + Math.random() * 18 + 'px';
-    flake.style.opacity = Math.random();
-    flake.style.animationDuration = 9 + Math.random() * 6 + 's';
-    document.body.appendChild(flake);
-  }
-</script>
-
+<!-- 🎵 MÜZİK -->
 <audio id="music" loop>
-  <source src="golden brown.mp3" type="audio/mpeg" />
+  <source src="golden brown.mp3" type="audio/mpeg">
 </audio>
+
+<!-- ❤️ KALPLER -->
+<script>
+for (let i = 0; i < 30; i++) {
+  const heart = document.createElement('div');
+  heart.className = 'heart';
+  heart.style.left = Math.random() * 100 + 'vw';
+  heart.style.animationDuration = 6 + Math.random() * 6 + 's';
+  document.body.appendChild(heart);
+}
+</script>
+
+<!-- ❄️ KAR -->
+<script>
+for (let i = 0; i < 80; i++) {
+  const flake = document.createElement('div');
+  flake.className = 'snowflake';
+  flake.innerHTML = '❄';
+  flake.style.left = Math.random() * 100 + 'vw';
+  flake.style.fontSize = 10 + Math.random() * 18 + 'px';
+  flake.style.opacity = Math.random();
+  flake.style.animationDuration = 8 + Math.random() * 6 + 's';
+  document.body.appendChild(flake);
+}
+</script>
 
 <header>
   <div class="tree">🎄</div>
   <h1>🐱 Sen Benim En Güzel Tesadüfümsün EVŞANIM 🐱</h1>
-  <p>YENİ YILIN KUTLU OLSUN BALIMMM NİCE BİZLİ SENELEREE</p>
+  <p>Yeni yılın kutlu olsun balımm, nice bizli senelere ❤️</p>
 </header>
 
 <section class="cats">
@@ -68,56 +71,29 @@
 <div id="poem">
   <h2>Seni Seviyorummmm</h2>
   <p>
-    Seni anlatmak zor,<br>
-    çünkü bazı kelimeler benden kaçar,<br>
-    tutulmaz, çağrılmaz, kendi gelir.<br><br>
-
+    Seni anlatmak zor,<br><br>
     Ben seni bir ömür beklerim,<br>
-    gelirsen şayet<br>
-    Sessiz bir akşamda,<br>
-    kalbimin kenarına düşüverir gözlerin.<br><br>
-
-    Gözlerin,<br>
-    gecenin en yumuşak yeriydi,<br>
-    sustuğum her cümlede<br>
-    biraz daha sana benzedim.<br><br>
-
+    kalbimin en yumuşak yerine…<br><br>
     Eğer kalbim bir evse,<br>
-    sen pencere önünde uyuyan bir kedisin,<br>
-    ben adını fısıldamaya korkan biri.<br><br>
-
-    Kal öyle içimde bastırayım bağrıma,<br>
-    sonbaharın yaprağı gibi süzül<br>
-    Kışın ilk kar tanesi gibi düş o kalbime.<br><br>
-
-    O yüzden<br>
-    gel…<br>
-    mırıldan bana,<br>
-    dünya dönsün, kalbim dursun.
+    sen pencere önünde uyuyan bir kedisin 🐱
   </p>
 </div>
 
-<footer>powered by Berat Bartın </footer>
+<footer>powered by Berat Bartın</footer>
 
 <script>
-  function showPoem() {
-    document.getElementById('poem').style.display = 'block';
-    const music = document.getElementById('music');
-    music.play();
+function showPoem() {
+  document.getElementById('poem').classList.add('show');
+  const music = document.getElementById('music');
+  music.play();
 
-    // ❄️ Müzik başlayınca kar hızlansın
-    document.querySelectorAll('.snowflake').forEach(flake => {
-      flake.style.animationDuration = 2 + Math.random() * 2 + 's';
-    });
+  document.querySelectorAll('.snowflake').forEach(flake => {
+    flake.style.animationDuration = 2 + Math.random() * 2 + 's';
+  });
 
-    document.getElementById('poem').scrollIntoView({ behavior: 'smooth' });
-  }
+  document.getElementById('poem').scrollIntoView({ behavior: 'smooth' });
+}
 </script>
 
 </body>
 </html>
-
-
-
-
-
