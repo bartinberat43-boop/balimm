@@ -26,7 +26,18 @@ body {
 header {
   text-align: center;
   padding: 60px 20px;
-  animation: fadeIn 2s ease;
+  animation: fadeIn 2s ease forwards;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(25px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 .tree {
@@ -35,8 +46,8 @@ header {
 }
 
 @keyframes treeGlow {
-  from { transform: scale(1); }
-  to { transform: scale(1.1); }
+  from { transform: scale(1); filter: drop-shadow(0 0 10px #ff4da6); }
+  to { transform: scale(1.15); filter: drop-shadow(0 0 25px #ff9ad5); }
 }
 
 h1 {
@@ -59,22 +70,28 @@ p {
 }
 
 .cat {
-  background: rgba(255,255,255,0.1);
+  background: rgba(255,255,255,0.12);
   padding: 20px;
-  border-radius: 20px;
+  border-radius: 22px;
   width: 220px;
   text-align: center;
-  backdrop-filter: blur(6px);
+  backdrop-filter: blur(8px);
   animation: float 4s ease-in-out infinite;
+  transition: transform .4s, box-shadow .4s;
+}
+
+.cat:hover {
+  transform: scale(1.08);
+  box-shadow: 0 0 25px rgba(255,77,166,0.7);
 }
 
 .cat span {
-  font-size: 40px;
+  font-size: 42px;
 }
 
 @keyframes float {
   0%,100% { transform: translateY(0); }
-  50% { transform: translateY(-10px); }
+  50% { transform: translateY(-12px); }
 }
 
 /* 💖 BUTON */
@@ -84,39 +101,36 @@ p {
 }
 
 button {
-  padding: 15px 30px;
+  padding: 15px 34px;
   border-radius: 30px;
   border: none;
   font-size: 18px;
   cursor: pointer;
-  background: #ff4da6;
+  background: linear-gradient(45deg, #ff4da6, #ff9ad5);
   color: black;
   animation: pulse 2s infinite;
+  box-shadow: 0 0 20px rgba(255,77,166,0.6);
 }
 
 @keyframes pulse {
   0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
+  50% { transform: scale(1.12); }
   100% { transform: scale(1); }
 }
 
 /* 📜 ŞİİR */
 #poem {
   display: none;
-  max-width: 700px;
+  max-width: 720px;
   margin: 40px auto;
   padding: 30px;
-  background: rgba(0,0,0,0.5);
-  border-radius: 20px;
+  background: rgba(0,0,0,0.55);
+  border-radius: 22px;
   animation: glowIn 1.5s ease forwards;
 }
 
-#poem.show {
-  display: block;
-}
-
 @keyframes glowIn {
-  from { opacity: 0; transform: scale(0.9); }
+  from { opacity: 0; transform: scale(0.92); }
   to { opacity: 1; transform: scale(1); }
 }
 
@@ -146,7 +160,7 @@ button {
 
 @keyframes rise {
   to {
-    transform: translateY(-110vh) rotate(45deg);
+    transform: translateY(-120vh) rotate(45deg);
     opacity: 0;
   }
 }
@@ -159,9 +173,10 @@ button {
 }
 
 @keyframes fall {
-  to { transform: translateY(110vh); }
+  to { transform: translateY(120vh); }
 }
 
+/* ⬇️ FOOTER */
 footer {
   text-align: center;
   padding: 30px;
