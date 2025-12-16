@@ -256,7 +256,36 @@ function meow(){
   document.getElementById("meow").play();
 }
 </script>
+<script>
+function countdown(){
+  const target = new Date("Dec 31, 2025 23:59:59").getTime();
+
+  setInterval(()=>{
+    const now = new Date().getTime();
+    const diff = target - now;
+
+    if(diff <= 0){
+      document.getElementById("countdown").innerHTML =
+        "<h2>🎉 Yeni Yıl Kutlu Olsun EVŞAN 💖</h2>";
+      return;
+    }
+
+    document.getElementById("days").innerText =
+      Math.floor(diff / (1000*60*60*24));
+    document.getElementById("hours").innerText =
+      Math.floor((diff / (1000*60*60)) % 24);
+    document.getElementById("minutes").innerText =
+      Math.floor((diff / (1000*60)) % 60);
+    document.getElementById("seconds").innerText =
+      Math.floor((diff / 1000) % 60);
+
+  },1000);
+}
+
+countdown();
+</script>
 
 </body>
 </html>
+
 
